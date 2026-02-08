@@ -45,19 +45,19 @@ jobs:
     - name: Create icons
       run: |
         mkdir -p data
-        python3 << 'EOF'
-from PIL import Image
-import random
+        python3 - <<'PY'
+        from PIL import Image
 
-# Create icon.png
-icon = Image.new('RGBA', (512, 512), (10, 15, 30, 255))
-icon.save('data/icon.png')
+        # Create icon.png
+        icon = Image.new('RGBA', (512, 512), (10, 15, 30, 255))
+        icon.save('data/icon.png')
 
-# Create presplash.png
-splash = Image.new('RGB', (1200, 1920), (10, 15, 30))
-splash.save('data/presplash.png')
-print("✓ Icons created")
-EOF
+        # Create presplash.png
+        splash = Image.new('RGB', (1200, 1920), (10, 15, 30))
+        splash.save('data/presplash.png')
+
+        print("✓ Icons created")
+        PY
     
     - name: Build with Buildozer
       run: |
