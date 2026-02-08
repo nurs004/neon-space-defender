@@ -9,7 +9,8 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
+
     
     steps:
     - uses: actions/checkout@v3
@@ -66,7 +67,7 @@ jobs:
         ANDROID_ACCEPT_LICENSE: "yes"
     
     - name: Upload APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.0
       with:
         name: neonspacedefender.apk
         path: bin/*.apk
